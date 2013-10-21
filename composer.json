@@ -12,7 +12,10 @@
 	"autoload": {
 		"psr-0": {
 			"IT490": "inc/"
-		}
+		},
+		"files": [
+			"inc/IT490/Functions.php"
+		]
 	},
 	"license": "proprietary"
 }
