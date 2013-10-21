@@ -1,8 +1,9 @@
 <?php
 	require_once 'vendor/autoload.php';
 	
-	$app = new IT490\Application();
+	$app = IT490\Application::app();
+	$app->root = __DIR__ . '/app';
 	$app->boot();
 	
-	$app->router()->serve();
+	$app->run();
 ?>
