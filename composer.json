@@ -1,5 +1,5 @@
 {
-	"name": "IT490",
+	"name": "grantjbutler/it490",
 	"version": "0.1",
 	"description": "IT490 Project",
 	"require": {
@@ -8,5 +8,11 @@
 		"slim/extras": "2.*",
 		"twig/twig": "1.*",
 		"illuminate/database": "*"
-	}
+	},
+	"autoload": {
+		"psr-0": {
+			"IT490": "inc/"
+		}
+	},
+	"license": "proprietary"
 }
