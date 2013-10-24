@@ -9,4 +9,8 @@
 				break;
 		}
 	}
+	
+	function app() {
+		return IT490\Application::app();
+	}
 ?>
