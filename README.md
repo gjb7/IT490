@@ -9,7 +9,7 @@ This is the final project for NJIT's IT 490 course.
 
 ## Getting Started
 
-NOTE: Instructions subject to change.
+*NOTE: Instructions subject to change.*
 
 1. Install the required libraries. This can be done by running `composer install`
 2. Upload to your webserver.
@@ -18,4 +18,4 @@ NOTE: Instructions subject to change.
 
 ## Further Documentation
 
-For more details about the implementation of the system, go check out the [docs](docs/). It has more details about the architecture of this system as well as details about how to add new parts to it.
+For more details about the implementation of the system, go check out the [docs](docs/). It has more details about the architecture of this system as well as details about how to add new parts to it. It is **highly recommended** that you read all the documentation before you start making modifications.
