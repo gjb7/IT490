@@ -10,6 +10,10 @@
 		"illuminate/database": "*"
 	},
 	"autoload": {
+		"classmap": [
+			"app/controller",
+			"app/model"
+		],
 		"psr-0": {
 			"IT490": "inc/"
 		},
