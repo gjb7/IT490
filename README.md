@@ -9,7 +9,9 @@ This is the final project for NJIT's IT 490 course.
 
 ## Getting Started
 
-1. Install the required libraries. This can be don by running `composer install`
+NOTE: Instructions subject to change.
+
+1. Install the required libraries. This can be done by running `composer install`
 2. Upload to your webserver.
 3. Navigate to `http://<YOUR HOST>/migrate` to setup the database.
 4. Go!
