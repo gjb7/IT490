@@ -1,10 +1,7 @@
 <?php
 	namespace IT490;
 	
-	class Application {
-		// Singleton instance of the Application class.
-		private static $instance = null;
-		
+	class Application extends \Illuminate\Container\Container {
 		// Instance of Slim.
 		private $slim = null;
 		
@@ -16,18 +13,8 @@
 		 */
 		public $root;
 		
-		/**
-		 * Returns the singleton of the Application.
-		 */
-		public static function app() {
-			if (!static::$instance) {
-				static::$instance = new self();
-			}
-			return static::$instance;
-		}
-		
 		// Private constructor. See Application::app instead.
-		private function __construct() {
+		public function __construct() {
 			$this->slim = new \Slim\Slim();
 		}
 		
@@ -65,8 +52,6 @@
 		public function run() {
 			$this->router->serve();
 		}
-		
-		// ------
 		
 		/**
 		 * Returns the instance of the Router for this application.
