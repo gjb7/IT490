@@ -7,12 +7,14 @@
 		"slim/slim": "2.*",
 		"slim/extras": "2.*",
 		"twig/twig": "1.*",
-		"illuminate/database": "*"
+		"illuminate/database": "*",
+		"illuminate/filesystem": "*"
 	},
 	"autoload": {
 		"classmap": [
 			"app/controller",
-			"app/model"
+			"app/model",
+			"app/migration"
 		],
 		"psr-0": {
 			"IT490": "inc/"
