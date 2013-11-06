@@ -1,8 +1,9 @@
 <?php
+	// TODO: This can probably be removed in the future.
 	function path($path) {
 		switch ($path) {
 			case 'app':
-				return IT490\Application::app()->root;
+				return app()->root;
 				break;
 			default:
 				return '';
@@ -10,7 +11,4 @@
 		}
 	}
 	
-	function app() {
-		return IT490\Application::app();
-	}
 ?>
