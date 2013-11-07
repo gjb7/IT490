@@ -16,6 +16,9 @@
 		// Private constructor. See Application::app instead.
 		public function __construct() {
 			$this->slim = new \Slim\Slim();
+			
+			$this['url'] = new URLGenerator($this->slim);
+			$this['html'] = new HTMLBuilder($this['url']);
 		}
 		
 		/**
@@ -58,6 +61,10 @@
 		 */
 		public function router() {
 			return $this->router;
+		}
+		
+		public function slim() {
+			return $this->slim;
 		}
 	}
 ?>
