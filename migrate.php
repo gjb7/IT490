@@ -34,7 +34,6 @@
 			$name = $argv[2];
 		}
 		else {
-			// TODO: print usage for new.
 			die("Usage: " . $argv[0] . " new <name>\n");
 		}
 		
