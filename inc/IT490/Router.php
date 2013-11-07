@@ -4,6 +4,8 @@
 	class Router {
 		private $slim = null;
 		
+		private $rendererManager = null;
+		
 		/**
 		 * Designated constructor.
 		 *
@@ -11,6 +13,7 @@
 		 */
 		public function __construct($slim) {
 			$this->slim = $slim;
+			$this->rendererManager = new RendererManager($this->slim);
 		}
 		
 		/**
@@ -34,13 +37,13 @@
 		 * @param $controller The name of the controller class that will get run.
 		 */
 		public function controller($path, $controller) {
-			$this->get($path, array($controller, 'index'));
-			$this->get($path . '/new', array($controller, 'new'));
-			$this->post($path, array($controller, 'create'));
-			$this->get($path . '/:id', array($controller, 'show'));
-			$this->get($path . '/:id/edit', array($controller, 'edit'));
-			$this->put($path . '/:id', array($controller, 'update'));
-			$this->delete($path . '/:id', array($controller, 'delete'));
+			$this->get($path, array($controller, 'index'))->name($controller . '@index');
+			$this->get($path . '/new', array($controller, 'create'))->name($controller . '@create');
+			$this->post($path, array($controller, 'store'))->name($controller . '@store');
+			$this->get($path . '/:id', array($controller, 'show'))->name($controller . '@show');
+			$this->get($path . '/:id/edit', array($controller, 'edit'))->name($controller . '@edit');
+			$this->put($path . '/:id', array($controller, 'update'))->name($controller . '@update');
+			$this->delete($path . '/:id', array($controller, 'destroy'))->name($controller . '@destroy');
 		}
 		
 		/**
@@ -52,7 +55,7 @@
 		 * @param $action The action to be performed.
 		 */
 		public function get($path, $action) {
-			$this->route('GET', $path, $action);
+			return $this->route('GET', $path, $action);
 		}
 		
 		/**
@@ -64,7 +67,7 @@
 		 * @param $action The action to be performed.
 		 */
 		public function post($path, $action) {
-			$this->route('POST', $path, $action);
+			return $this->route('POST', $path, $action);
 		}
 		
 		/**
@@ -76,7 +79,7 @@
 		 * @param $action The action to be performed.
 		 */
 		public function put($path, $action) {
-			$this->route('PUT', $path, $action);
+			return $this->route('PUT', $path, $action);
 		}
 		
 		/**
@@ -88,7 +91,7 @@
 		 * @param $action The action to be performed.
 		 */
 		public function delete($path, $action) {
-			$this->route('DELETE', $path, $action);
+			return $this->route('DELETE', $path, $action);
 		}
 		
 		/**
@@ -104,8 +107,9 @@
 			$method = strtolower($method);
 			$self = $this;
 			
-			$this->slim->{$method}($path, function() use ($action, $self) {
-				$self->performAction($action, func_get_args());
+			return $this->slim->{$method}($path, function() use ($action, $self) {
+				$result = $self->performAction($action, func_get_args());
+				$self->render($result, $action);
 			});
 		}
 		
@@ -117,10 +121,10 @@
 		 */
 		private function performAction($action, $args) {
 			if (is_array($action)) {
-				$this->performController($action, $args);
+				return $this->performController($action, $args);
 			}
 			else if (is_callable($action)) {
-				$this->performCallback($action, $args);
+				return $this->performCallback($action, $args);
 			}
 		}
 		
@@ -136,7 +140,7 @@
 			$class = $controller[0];
 			$method = $controller[1];
 			$instance = new $class();
-			call_user_func_array(array($instance, $method), $args);
+			return call_user_func_array(array($instance, $method), $args);
 		}
 		
 		/**
@@ -146,7 +150,19 @@
 		 * @param $args The arguments to be passed to the function.
 		 */
 		private function performCallback($callback, $args) {
-			call_user_func_array($callback, $args);
+			return call_user_func_array($callback, $args);
+		}
+		
+		private function render($result, $action) {
+			if (is_null($result)) {
+				return;
+			}
+			
+			$currentRoute = $this->slim->router()->getCurrentRoute();
+			$pattern = $currentRoute->getPattern();
+			$extension = pathinfo($pattern, PATHINFO_EXTENSION);
+			
+			$this->rendererManager->render($result, $extension, $action);
 		}
 	}
 ?>
