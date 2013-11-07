@@ -1,0 +1,34 @@
+{% extends "_layout.twig" %}
+
+{% block title %}Customers{% endblock %}
+
+{% block content %}
+			<div class="clearfix">
+				<div class="pull-right">
+					
+				</div>
+				
+				<div class="pull-left">
+					{{ link_to_action('CustomersController@create', 'New Customer', {}, {'class': 'btn btn-primary'}) }}
+				</div>
+			</div>
+			
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for customer in customers %}
+					<tr>
+						<td>{{ link_to_action('CustomersController@edit', customer.first_name, {'id': customer.id}) }}</td>
+					</tr>
+					{% else %}
+					<tr>
+						<td>No customers.</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+{% endblock %}
