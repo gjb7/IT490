@@ -1,7 +1,11 @@
 <?php
-	require_once 'vendor/autoload.php';
+	require_once 'common.php';
 	
-	$app = IT490\Application::app();
+	use Illuminate\Support\Facades\Facade;
+	
+	$app = new IT490\Application();
+	Facade::setFacadeApplication($app);
+	
 	$app->root = __DIR__ . '/app';
 	$app->boot();
 	
