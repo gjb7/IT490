@@ -11,4 +11,8 @@
 		}
 	}
 	
+	function redirect_to_action($action, $parameters = array()) {
+		app()->slim()->redirect(app('url')->action($action, $parameters));
+	}
+	
 ?>
