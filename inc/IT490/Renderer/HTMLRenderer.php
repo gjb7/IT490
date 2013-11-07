@@ -1,7 +1,7 @@
 <?php
-	namespace IT490\FileExtensionHandler;
+	namespace IT490\Renderer;
 	
-	class HTMLFileExtensionHandler {
+	class HTMLRenderer {
 		private $slim = null;
 		
 		public function __construct($slim) {
@@ -11,7 +11,8 @@
 		public function render($output, $args = array()) {
 			if (is_string($output)) {
 				echo $output;
-			} else if (count($args) >= 2) {
+			}
+			else {
 				if ($output == null) {
 					$output = array();
 				}

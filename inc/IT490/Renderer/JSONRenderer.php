@@ -1,7 +1,7 @@
 <?php
-	namespace IT490\FileExtensionHandler;
+	namespace IT490\Renderer;
 	
-	class JSONFileExtensionHandler {
+	class JSONRenderer {
 		public function render($output, $args = array()) {
 			if (is_array($output)) {
 				echo json_encode($output);
