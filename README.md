@@ -15,7 +15,7 @@ This is the final project for NJIT's IT 490 course.
 2. Upload to your webserver.
 3. Copy `app/database.sample.php` to `app/database.php` and modify for your database info.
 4. Run `php -f migrate.php` to setup the database.
-	4.1. If you're running this on NJIT's AFS, then you need to use `/usr/local/bin/php` instead of `php`, as they are two separate versions and the default one doesn't any MySQL functionality.
+	1. If you're running this on NJIT's AFS, then you need to use `/usr/local/bin/php` instead of `php`, as they are two separate versions and the default one doesn't any MySQL functionality.
 5. Go!
 
 ## Further Documentation
