@@ -1,0 +1,38 @@
+{% extends "_layout.twig" %}
+
+{% block title %}Items{% endblock %}
+
+{% block content %}
+			<div class="clearfix">
+				<div class="pull-right">
+					
+				</div>
+				
+				<div class="pull-left">
+					{{ link_to_action('ItemsController@create', 'New Item', {}, {'class': 'btn btn-primary'}) }}
+				</div>
+			</div>
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Quantity</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for item in items %}
+					<tr>
+						<td>{{ link_to_action('ItemsController@edit', item.name, {'id': item.id}) }}</td>
+						<td>{{ item.quantity }}</td>
+						<td>${{ item.price | number_format(2) }}</td>
+					</tr>
+					{% else %}
+					<tr>
+						<td colspan="3">No items.</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+{% endblock %}

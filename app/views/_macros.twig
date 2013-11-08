@@ -1,0 +1,19 @@
+{% macro render_flash(flash) %}
+{% import _self as _macros %}
+
+{% for type in flash | keys %}
+	<div class="alert {{ _macros._flashTypeToClassName(type) }}">
+		<ul>
+			{% for message in flash[type] %}
+			<li>{{ message }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro _flashTypeToClassName(type) %}
+{% if type == 'error' %}
+alert-danger
+{% endif %}
+{% endmacro %}

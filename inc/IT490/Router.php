@@ -37,13 +37,13 @@
 		 * @param $controller The name of the controller class that will get run.
 		 */
 		public function controller($path, $controller) {
-			$this->get($path, array($controller, 'index'))->name($controller . '@index');
-			$this->get($path . '/new', array($controller, 'create'))->name($controller . '@create');
-			$this->post($path, array($controller, 'store'))->name($controller . '@store');
-			$this->get($path . '/:id', array($controller, 'show'))->name($controller . '@show');
-			$this->get($path . '/:id/edit', array($controller, 'edit'))->name($controller . '@edit');
-			$this->put($path . '/:id', array($controller, 'update'))->name($controller . '@update');
-			$this->delete($path . '/:id', array($controller, 'destroy'))->name($controller . '@destroy');
+			$this->get($path, $controller . '@index');
+			$this->get($path . '/new',  $controller . '@create');
+			$this->post($path, $controller . '@store');
+			$this->get($path . '/:id', $controller . '@show');
+			$this->get($path . '/:id/edit', $controller . '@edit');
+			$this->put($path . '/:id', $controller . '@update');
+			$this->delete($path . '/:id', $controller . '@destroy');
 		}
 		
 		/**
@@ -107,10 +107,16 @@
 			$method = strtolower($method);
 			$self = $this;
 			
-			return $this->slim->{$method}($path, function() use ($action, $self) {
-				$result = $self->performAction($action, func_get_args());
+			$route = $this->slim->{$method}($path, function() use ($action, $self) {
+				$result = $self->perform($action, func_get_args());
 				$self->render($result, $action);
 			});
+			
+			if (is_string($action)) {
+				$route->name($action);
+			}
+			
+			return $route;
 		}
 		
 		/**
@@ -119,9 +125,9 @@
 		 * @param $action The action to be performed. Can be a function or an array.
 		 * @param $args Any arguments to be passed to the action.
 		 */
-		private function performAction($action, $args) {
-			if (is_array($action)) {
-				return $this->performController($action, $args);
+		private function perform($action, $args) {
+			if (is_string($action)) {
+				return $this->performAction($action, $args);
 			}
 			else if (is_callable($action)) {
 				return $this->performCallback($action, $args);
@@ -136,9 +142,8 @@
 		 * @param $controller An array designating a class/method pair to be executed. See call_user_func_array for details.
 		 * @param $args The arguments to be passed to the method.
 		 */
-		private function performController($controller, $args) {
-			$class = $controller[0];
-			$method = $controller[1];
+		private function performAction($action, $args) {
+			list($class, $method) = self::controllerFromAction($action);
 			$instance = new $class();
 			return call_user_func_array(array($instance, $method), $args);
 		}
@@ -154,15 +159,22 @@
 		}
 		
 		private function render($result, $action) {
-			if (is_null($result)) {
-				return;
+			if (is_string($action)) {
+				$action = self::controllerFromAction($action);
 			}
 			
 			$currentRoute = $this->slim->router()->getCurrentRoute();
 			$pattern = $currentRoute->getPattern();
 			$extension = pathinfo($pattern, PATHINFO_EXTENSION);
 			
-			$this->rendererManager->render($result, $extension, $action);
+			$this->rendererManager->render($result, $extension, array($action));
+		}
+		
+		/**
+		 * Takes in an action and returns a controller class and a method.
+		 */
+		public static function controllerFromAction($action) {
+			return explode('@', $action);
 		}
 	}
 ?>

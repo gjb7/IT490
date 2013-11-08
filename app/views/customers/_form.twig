@@ -1,28 +1,31 @@
-		{# TODO: Change action #}
-		<form role="form" action="{{ action('CustomersController@store') }}" method="post">
+		{% macro form(action, customer) %}
+		
+		<form role="form" action="{{ action }}" method="post">
 			<div class="form-group">
 				<label for="first_name">First Name</label>
-				<input type="text" class="form-control" id="first_name" name="customer[first_name]" placeholder="John">
+				<input type="text" class="form-control" id="first_name" name="customer[first_name]" placeholder="John" value="{{ customer.first_name }}">
 			</div>
 			<div class="form-group">
 				<label for="last_name">Last Name</label>
-				<input type="text" class="form-control" id="last_name" name="customer[last_name]" placeholder="Smith">
+				<input type="text" class="form-control" id="last_name" name="customer[last_name]" placeholder="Smith" value="{{ customer.last_name }}">
 			</div>
 			<div class="form-group">
 				<label for="address">Address</label>
-				<input type="text" class="form-control" id="address" name="customer[address]" placeholder="123 Mulberry St.">
+				<input type="text" class="form-control" id="address" name="customer[address]" placeholder="123 Mulberry St." value="{{ customer.address }}">
 			</div>
 			<div class="form-group">
 				<label for="city">City</label>
-				<input type="text" class="form-control" id="city" name="customer[city]" placeholder="Anytown">
+				<input type="text" class="form-control" id="city" name="customer[city]" placeholder="Anytown" value="{{ customer.city }}">
 			</div>
 			<div class="form-group">
 				<label for="state">State</label>
-				<input type="text" class="form-control" id="state" name="customer[state]" placeholder="Anystate">
+				<input type="text" class="form-control" id="state" name="customer[state]" placeholder="Anystate" value="{{ customer.state }}">
 			</div>
 			<div class="form-group">
 				<label for="zip">Zip</label>
-				<input type="number" class="form-control" id="zip" name="customer[zip]" placeholder="12345">
+				<input type="number" class="form-control" id="zip" name="customer[zip]" placeholder="12345" value="{{ customer.zip }}">
 			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
+			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
+		
+		{% endmacro %}

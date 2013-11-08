@@ -27,13 +27,13 @@ class CreateTables extends Migration {
 			$table->increments('id');
 			$table->string('name')->unique();
 			$table->integer('quantity');
-			$table->float('price');
+			$table->decimal('price', 10, 2);
 		});
 		
 		Capsule::schema()->create('orders', function ($table) {
 			$table->increments('id');
 			$table->integer('customer_id')->unsigned();
-			$table->float('amount_due');
+			$table->decimal('amount_due', 10, 2);
 			$table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
 		});
 		

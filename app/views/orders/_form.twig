@@ -1,0 +1,48 @@
+		{% macro form(action, items, customers) %}
+		
+		<form role="form" action="{{ action }}" method="post">
+			<div class="form-group">
+				<label for="customer_id">Customer</label>
+				<select id="customer_id" name="order[customer_id]" class="form-control">
+					<option disabled selected>Select a Customer</option>
+				{% for customer in customers %}
+					<option value="{{ customer.id }}">{{ customer.name }}</option>
+				{% endfor %}
+				</select>
+			</div>
+			<div class="form-group text-right" id="total-group">
+				<label for="total">Total</label>
+				<p class="form-control-static" id="total">$0.00</p>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		
+		<script type="text/x-tmpl" id="item-tmpl">
+			<fieldset>
+				<legend>
+					Item
+					<p class="pull-right">
+						<a onclick="Order.addItem(this);" class="add"><span class="glyphicon glyphicon-plus-sign"></span></a>
+						<a onclick="Order.removeItem(this);" class="remove"><span class="glyphicon glyphicon-remove-sign"></span></a>
+					</p>
+				</legend>
+				<div class="form-group">
+					<select name="order[items][id][]" class="form-control item-select" onchange="Order.changeItem(this);">
+						<option disabled selected>Select an Item</option>
+					<% for(var key in items) { %>
+					<% var item = items[key]; %>
+						<option value="<%= item.id %>"><%= item.name %></option>
+					<% } %>
+					</select>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon"><span class="unit-price">$0.00</span> x </span>
+						<input type="number" class="form-control quantity-field" name="order[items][quantity][]" onkeyup="Order.changeQuantity(this);">
+						<span class="input-group-addon">= <span class="total-price">$0.00</span></span>
+					</div>
+				</div>
+			</fieldset>
+		</script>
+		
+		{% endmacro %}

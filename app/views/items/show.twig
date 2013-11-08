@@ -1,0 +1,9 @@
+{% extends "_layout.twig" %}
+
+{% block title %}Item - {{ item.name }}{% endblock %}
+
+{% block content %}
+		<h3>{{ item.name }}</h3>
+		<p>Quantity: {{ item.quantity }}</p>
+		<p>Price: ${{ item.price | number_format(2) }}</p>
+{% endblock %}

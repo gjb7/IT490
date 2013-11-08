@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	require_once 'common.php';
 	
 	use Illuminate\Support\Facades\Facade;

@@ -1,0 +1,11 @@
+{% extends "_layout.twig" %}
+
+{% block title %}Customer - {{ customer.name }}{% endblock %}
+
+{% block content %}
+		<h3>{{ customer.name }}</h3>
+		<address>
+			{{ customer.address }}<br>
+			{{ customer.city }}, {{ customer.state }} {{ customer.zip }}
+		</address>
+{% endblock %}

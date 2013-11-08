@@ -1,0 +1,23 @@
+{% extends "_layout.twig" %}
+
+{% block title %}New Order{% endblock %}
+
+{% block content %}
+		{% import "orders/_form.twig" as form %}
+		{% from "_macros.twig" import render_flash as render_flash %}
+		
+		{{ render_flash(flash) }}
+		
+		{{ form.form(action('OrdersController@store'), items, customers) }}
+{% endblock %}
+
+{% block javascripts %}
+		<script src="{{ asset('/js/order.js') }}"></script>
+		<script>
+			Order.setItems({{ items.toJson() | raw }});
+			
+			$(function() {
+				Order.init();
+			});
+		</script>
+{%endblock %}

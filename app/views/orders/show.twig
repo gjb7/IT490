@@ -1,0 +1,39 @@
+{% extends "_layout.twig" %}
+
+{% block title %}View Order{% endblock %}
+
+{% block content %}
+		<h2>Customer</h2>
+		<address>
+			<strong>{{ order.customer.name }}</strong><br>
+			{{ order.customer.address }}<br>
+			{{ order.customer.city}}, {{ order.customer.state }} {{ order.customer.zip }}
+		</address>
+		
+		<h2>Items</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Price per Unit</th>
+					<th>Quantity Ordered</th>
+					<th>Total Cost</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% set total = 0 %}
+			{% for item in order.items %}
+				<tr>
+					<td>{{ item.name }}</td>
+					<td>{{ item.price | number_format(2) }}</td>
+					<td>{{ item.pivot.quantity }}</td>
+					<td>${{ item.pivot.quantity * item.price | number_format(2) }}</td>
+				</tr>
+				{% set total = total + (item.pivot.quantity * item.price | number_format(2)) %}
+			{% endfor %}
+			<tr>
+				<td colspan="3"></td>
+				<td>${{ total }}</td>
+			</tr>
+			<tbody>
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "_layout.twig" %}
 
-{% block title %}New Customer{% endblock %}
+{% block title %}Edit Customer - {{ customer.name }}{% endblock %}
 
 {% block content %}
 		{% import "customers/_form.twig" as form %}
@@ -8,5 +8,5 @@
 		
 		{{ render_flash(flash) }}
 		
-		{{ form.form(action('CustomersController@store')) }}
+		{{ form.form(action('CustomersController@update', {'id': customer.id}), customer) }}
 {% endblock %}

@@ -1,0 +1,36 @@
+{% extends "_layout.twig" %}
+
+{% block title %}Orders{% endblock %}
+
+{% block content %}
+			<div class="clearfix">
+				<div class="pull-left">
+					{{ link_to_action('OrdersController@create', 'New Order', {}, {'class': 'btn btn-primary'}) }}
+				</div>
+			</div>
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Order ID</th>
+						<th>Customer</th>
+						<th>Number of Items</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for order in orders %}
+					<tr>
+						<td>{{ link_to_action('OrdersController@show', order.id, {'id': order.id}) }}</td>
+						<td>{{ link_to_action('CustomersController@show', order.customer().first().name, {'id': order.customer().first().id}) }}</td>
+						<td>{{ order.items | length }}</td>
+						<td>${{ order.amount_due | number_format(2) }}</td>
+					</tr>
+					{% else %}
+					<tr>
+						<td colspan="4">No orders.</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+{% endblock %}

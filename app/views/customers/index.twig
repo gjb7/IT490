@@ -4,16 +4,12 @@
 
 {% block content %}
 			<div class="clearfix">
-				<div class="pull-right">
-					
-				</div>
-				
 				<div class="pull-left">
 					{{ link_to_action('CustomersController@create', 'New Customer', {}, {'class': 'btn btn-primary'}) }}
 				</div>
 			</div>
 			
-			<table>
+			<table class="table">
 				<thead>
 					<tr>
 						<th>Name</th>
@@ -22,7 +18,7 @@
 				<tbody>
 					{% for customer in customers %}
 					<tr>
-						<td>{{ link_to_action('CustomersController@edit', customer.first_name, {'id': customer.id}) }}</td>
+						<td>{{ link_to_action('CustomersController@edit', customer.name, {'id': customer.id}) }}</td>
 					</tr>
 					{% else %}
 					<tr>

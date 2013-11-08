@@ -8,7 +8,9 @@
 		"slim/extras": "2.*",
 		"twig/twig": "1.*",
 		"illuminate/database": "*",
-		"illuminate/filesystem": "*"
+		"illuminate/filesystem": "*",
+		"illuminate/validation": "*",
+		"illuminate/container": "*"
 	},
 	"autoload": {
 		"classmap": [

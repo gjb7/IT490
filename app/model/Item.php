@@ -1,7 +1,15 @@
 <?php
-	class Item extends Illuminate\Database\Eloquent\Model {
+	class Item extends IT490\Model {
+		protected $fillable = array('name', 'quantity', 'price');
+		
+		protected $rules = array(
+			'name' => array('required'),
+			'quantity' => array('required'),
+			'price' => array('required'),
+		);
+		
 		public function orders() {
-			return $this->belongsToMany('Order');
+			return $this->belongsToMany('Order')->withPivot('quantity');
 		}
 	}
 ?>

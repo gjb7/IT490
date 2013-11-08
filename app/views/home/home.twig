@@ -1,0 +1,23 @@
+{% extends "_layout.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+		<div class="row">
+			<div class="col-md-4">
+				<div class="well text-center">
+					{{ count.customers }} {{ 'customer' | plural(count.customers) }}
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="well text-center">
+					{{ count.items }} {{ 'item' | plural(count.items) }}
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="well text-center">
+					{{ count.orders }} {{ 'order' | plural(count.orders) }}
+				</div>
+			</div>
+		</div>
+{% endblock %}

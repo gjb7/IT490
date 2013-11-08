@@ -1,12 +1,12 @@
 {% extends "_layout.twig" %}
 
-{% block title %}New Customer{% endblock %}
+{% block title %}New Item{% endblock %}
 
 {% block content %}
-		{% import "customers/_form.twig" as form %}
+		{% import "items/_form.twig" as form %}
 		{% from "_macros.twig" import render_flash as render_flash %}
 		
 		{{ render_flash(flash) }}
 		
-		{{ form.form(action('CustomersController@store')) }}
+		{{ form.form(action('ItemsController@store')) }}
 {% endblock %}

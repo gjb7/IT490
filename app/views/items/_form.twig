@@ -1,0 +1,22 @@
+		{% macro form(action, item) %}
+		
+		<form role="form" action="{{ action }}" method="post">
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" id="name" name="item[name]" placeholder="John" value="{{ item.name }}">
+			</div>
+			<div class="form-group">
+				<label for="quantity">Quantity</label>
+				<input type="text" class="form-control" id="quantity" name="item[quantity]" placeholder="Smith" value="{{ item.quantity }}">
+			</div>
+			<div class="form-group">
+				<label for="price">Price</label>
+				<div class="input-group">
+					<span class="input-group-addon">$</span>
+					<input type="text" class="form-control" id="price" name="item[price]" placeholder="19.99" value="{{ item.price | number_format(2) }}">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		
+		{% endmacro %}

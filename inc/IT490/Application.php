@@ -13,7 +13,9 @@
 		 */
 		public $root;
 		
-		// Private constructor. See Application::app instead.
+		/**
+		 * Designated constructor.
+		 */
 		public function __construct() {
 			$this->slim = new \Slim\Slim();
 			
@@ -63,6 +65,9 @@
 			return $this->router;
 		}
 		
+		/**
+		 * Returns the instance of Slim for this application.
+		 */
 		public function slim() {
 			return $this->slim;
 		}
