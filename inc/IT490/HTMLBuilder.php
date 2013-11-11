@@ -23,7 +23,7 @@
 		 * @param $attributes Any HTML attributes for the link.
 		 */
 		public function link($url, $title = null, $attributes = array()) {
-			$url = $this->url->to($url, array(), $secure);
+			$url = $this->url->to($url, array());
 			
 			if (is_null($title) or $title === false) {
 				$title = $url;
