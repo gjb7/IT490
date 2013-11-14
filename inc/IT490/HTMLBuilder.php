@@ -33,7 +33,7 @@
 		}
 		
 		/**
-		 * Returns a link to an asset. Pretty much the same as URLGenerator->link.
+		 * Returns a link to an asset. Pretty much the same as HTMLBuilder->link.
 		 */
 		public function linkAsset($url, $title = null, $attributes = array()) {
 			return $this->link($this->url->asset($url), $title, $attributes);
@@ -52,7 +52,7 @@
 		}
 		
 		/**
-		 * Returns a link to an action. Pretty much the same as URLGenerator->linkRoute.
+		 * Returns a link to an action. Pretty much the same as HTMLBuilder->linkRoute.
 		 */
 		public function linkAction($action, $title = null, $parameters = array(), $attributes = array()) {
 			return $this->link($this->url->action($action, $parameters), $title, $attributes);
