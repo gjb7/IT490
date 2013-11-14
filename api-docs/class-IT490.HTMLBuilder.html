@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class IT490\HTMLBuilder</title>
+
+	<script type="text/javascript" src="resources/combined.js?515913787"></script>
+	<script type="text/javascript" src="elementlist.js?3571799599"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-IT490.html">IT490<span></span></a>
+						<ul>
+				<li><a href="namespace-IT490.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-IT490.Renderer.html">Renderer</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-IT490.Application.html">Application</a></li>
+				<li class="active"><a href="class-IT490.HTMLBuilder.html">HTMLBuilder</a></li>
+				<li><a href="class-IT490.Model.html">Model</a></li>
+				<li><a href="class-IT490.Renderer.html">Renderer</a></li>
+				<li><a href="class-IT490.RendererManager.html">RendererManager</a></li>
+				<li><a href="class-IT490.Router.html">Router</a></li>
+				<li><a href="class-IT490.TwigExtension.html">TwigExtension</a></li>
+				<li><a href="class-IT490.URLGenerator.html">URLGenerator</a></li>
+				<li><a href="class-IT490.Validator.html">Validator</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-IT490.html" title="Summary of IT490"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class HTMLBuilder</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-IT490.html">IT490</a><br />
+		
+
+		<b>Located at</b> <a href="source-class-IT490.HTMLBuilder.html#4-77" title="Go to source code">IT490/HTMLBuilder.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-IT490.HTMLBuilder.html#7-16" title="Go to source code">__construct</a>( <span>mixed <var>$url</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Designated constructor.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Designated constructor.</p>
+
+<p>You shouldn't have to create this. It's created by default when creating a
+new Application.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$url</var></dt>
+					<dd><code>mixed</code><br>$url An instance of URLGenerator.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="link" id="_link">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_link">#</a>
+		<code><a href="source-class-IT490.HTMLBuilder.html#18-33" title="Go to source code">link</a>( <span>mixed <var>$url</var></span>, <span>mixed <var>$title</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$attributes</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Returns an HTML link.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an HTML link.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$url</var></dt>
+					<dd><code>mixed</code><br>$url The url of the link.</dd>
+					<dt><var>$title</var></dt>
+					<dd><code>mixed</code><br>$title The title of the link.</dd>
+					<dt><var>$attributes</var></dt>
+					<dd><code>mixed</code><br>$attributes Any HTML attributes for the link.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="linkAsset" id="_linkAsset">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_linkAsset">#</a>
+		<code><a href="source-class-IT490.HTMLBuilder.html#35-40" title="Go to source code">linkAsset</a>( <span>mixed <var>$url</var></span>, <span>mixed <var>$title</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$attributes</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a link to an asset. Pretty much the same as
+URLGenerator-&gt;link.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a link to an asset. Pretty much the same as
+URLGenerator-&gt;link.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="linkRoute" id="_linkRoute">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_linkRoute">#</a>
+		<code><a href="source-class-IT490.HTMLBuilder.html#42-52" title="Go to source code">linkRoute</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$title</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$parameters</var> = <span class="php-keyword1">array</span>()</span>, <span>mixed <var>$attributes</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a link to a route.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a link to a route.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>mixed</code><br>$name The name of the route. These are in the form of Controller@action.</dd>
+					<dt><var>$title</var></dt>
+					<dd><code>mixed</code><br>$title The title of the link.</dd>
+					<dt><var>$parameters</var></dt>
+					<dd><code>mixed</code><br>$parameters Any parameters to be substituted into the route's URL.</dd>
+					<dt><var>$attributes</var></dt>
+					<dd><code>mixed</code><br>$attributes Any HTML attributes for the link.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="linkAction" id="_linkAction">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_linkAction">#</a>
+		<code><a href="source-class-IT490.HTMLBuilder.html#54-59" title="Go to source code">linkAction</a>( <span>mixed <var>$action</var></span>, <span>mixed <var>$title</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$parameters</var> = <span class="php-keyword1">array</span>()</span>, <span>mixed <var>$attributes</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a link to an action. Pretty much the same as
+URLGenerator-&gt;linkRoute.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a link to an action. Pretty much the same as
+URLGenerator-&gt;linkRoute.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="attributes" id="_attributes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_attributes">#</a>
+		<code><a href="source-class-IT490.HTMLBuilder.html#61-76" title="Go to source code">attributes</a>( <span>mixed <var>$attributes</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Takes in an array of attributes, and renders them as HTML attributes.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Takes in an array of attributes, and renders them as HTML attributes.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

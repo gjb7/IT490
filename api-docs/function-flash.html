@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Function path</title>
+	<title>Function flash</title>
 
 	<script type="text/javascript" src="resources/combined.js?515913787"></script>
 	<script type="text/javascript" src="elementlist.js?3571799599"></script>
@@ -46,9 +46,9 @@
 
 			<h3>Functions</h3>
 			<ul>
-				<li><a href="function-flash.html">flash</a></li>
+				<li class="active"><a href="function-flash.html">flash</a></li>
 				<li><a href="function-flash_errors.html">flash_errors</a></li>
-				<li class="active"><a href="function-path.html">path</a></li>
+				<li><a href="function-path.html">path</a></li>
 				<li><a href="function-redirect_to_action.html">redirect_to_action</a></li>
 			</ul>
 		</div>
@@ -87,24 +87,36 @@
 	</div>
 
 <div id="content" class="function">
-	<h1>Function path</h1>
+	<h1>Function flash</h1>
 
 
+	<div class="description">
+	
+<p>Flashes a message for the next request.</p>
+
+	</div>
 
 	<div class="info">
 		
 		
-		<b>Located at</b> <a href="source-function-path.html#3-12" title="Go to source code">IT490/Functions.php</a><br />
+		<b>Located at</b> <a href="source-function-flash.html#24-32" title="Go to source code">IT490/Functions.php</a><br />
 	</div>
 
 
 	<table class="summary" id="parameters">
 	<caption>Parameters summary</caption>
-	<tr id="$path">
+	<tr id="$type">
 		<td class="name"><code>mixed</code></td>
-		<td class="value"><code><var>$path</var></code></td>
+		<td class="value"><code><var>$type</var></code></td>
 		<td>
-			
+			 A type/category for the message.
+		</td>
+	</tr>
+	<tr id="$message">
+		<td class="name"><code>mixed</code></td>
+		<td class="value"><code><var>$message</var></code></td>
+		<td>
+			 The message to show.
 		</td>
 	</tr>
 	</table>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File IT490/Renderer.php</title>
+
+	<script type="text/javascript" src="resources/combined.js?515913787"></script>
+	<script type="text/javascript" src="elementlist.js?3571799599"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-IT490.html">IT490<span></span></a>
+						<ul>
+				<li><a href="namespace-IT490.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-IT490.Renderer.html">Renderer</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-IT490.Application.html">Application</a></li>
+				<li><a href="class-IT490.HTMLBuilder.html">HTMLBuilder</a></li>
+				<li><a href="class-IT490.Model.html">Model</a></li>
+				<li class="active"><a href="class-IT490.Renderer.html">Renderer</a></li>
+				<li><a href="class-IT490.RendererManager.html">RendererManager</a></li>
+				<li><a href="class-IT490.Router.html">Router</a></li>
+				<li><a href="class-IT490.TwigExtension.html">TwigExtension</a></li>
+				<li><a href="class-IT490.URLGenerator.html">URLGenerator</a></li>
+				<li><a href="class-IT490.Validator.html">Validator</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-IT490.html" title="Summary of IT490"><span>Namespace</span></a>
+			</li>
+			<li>
+				<a href="class-IT490.Renderer.html" title="Summary of IT490\Renderer"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2: </a>    <span class="php-keyword1">namespace</span> IT490;
+</span><span id="3" class="l"><a class="l" href="#3"> 3: </a>    
+</span><span id="4" class="l"><a class="l" href="#4"> 4: </a>    <span class="php-comment">// Abstract class for creating a renderer. That is, creating a way to take in data and serialize it for</span>
+</span><span id="5" class="l"><a class="l" href="#5"> 5: </a>    <span class="php-comment">// the body of an HTTP response.</span>
+</span><span id="6" class="l"><a class="l" href="#6"> 6: </a>    <span class="php-keyword1">abstract</span> <span class="php-keyword1">class</span> <a id="Renderer" href="#Renderer">Renderer</a> {
+</span><span id="7" class="l"><a class="l" href="#7"> 7: </a>        <span class="php-comment">/**
+</span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment">         * Renders based off of some data. Subclasses are required to implement this method to perform the work necessary
+</span></span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-comment">         * to take some data, and transform it into a serialized result.
+</span></span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-comment">         *
+</span></span><span id="11" class="l"><a class="l" href="#11">11: </a><span class="php-comment">         * For example, the HTMLRenderer will take in the data and output a template. The JSONRenderer will take in the data
+</span></span><span id="12" class="l"><a class="l" href="#12">12: </a><span class="php-comment">         * and serialize it as a JSON object.
+</span></span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-comment">         */</span>
+</span><span id="14" class="l"><a class="l" href="#14">14: </a>        <span class="php-keyword1">abstract</span> <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_render" href="#_render">render</a>(<span class="php-var">$data</span>, <span class="php-var">$args</span> = <span class="php-keyword1">array</span>());
+</span><span id="15" class="l"><a class="l" href="#15">15: </a>    }
+</span><span id="16" class="l"><a class="l" href="#16">16: </a></span><span class="xlang">?&gt;</span></code></pre>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

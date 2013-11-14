@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class IT490\Application</title>
+	<title>Class IT490\Validator</title>
 
 	<script type="text/javascript" src="resources/combined.js?515913787"></script>
 	<script type="text/javascript" src="elementlist.js?3571799599"></script>
@@ -41,7 +41,7 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-IT490.Application.html">Application</a></li>
+				<li><a href="class-IT490.Application.html">Application</a></li>
 				<li><a href="class-IT490.HTMLBuilder.html">HTMLBuilder</a></li>
 				<li><a href="class-IT490.Model.html">Model</a></li>
 				<li><a href="class-IT490.Renderer.html">Renderer</a></li>
@@ -49,7 +49,7 @@
 				<li><a href="class-IT490.Router.html">Router</a></li>
 				<li><a href="class-IT490.TwigExtension.html">TwigExtension</a></li>
 				<li><a href="class-IT490.URLGenerator.html">URLGenerator</a></li>
-				<li><a href="class-IT490.Validator.html">Validator</a></li>
+				<li class="active"><a href="class-IT490.Validator.html">Validator</a></li>
 			</ul>
 
 
@@ -92,19 +92,19 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Application</h1>
+	<h1>Class Validator</h1>
 
 
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-Illuminate\Container\Container
+Illuminate\Validation\Validator
 			
 			
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>IT490\Application</span></b>			
+<b><span>IT490\Validator</span></b>			
 			
 			
 		</dd>
@@ -123,7 +123,7 @@ Illuminate\Container\Container
 		<b>Namespace:</b> <a href="namespace-IT490.html">IT490</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-IT490.Application.html#4-74" title="Go to source code">IT490/Application.php</a><br />
+		<b>Located at</b> <a href="source-class-IT490.Validator.html#5-53" title="Go to source code">IT490/Validator.php</a><br />
 	</div>
 
 
@@ -141,7 +141,7 @@ Illuminate\Container\Container
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-IT490.Application.html#16-24" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-IT490.Validator.html#11-20" title="Go to source code">__construct</a>( <span>mixed <var>$data</var></span>, <span>mixed <var>$rules</var></span> )</code>
 
 		<div class="description short">
 			
@@ -155,6 +155,13 @@ Illuminate\Container\Container
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd><code>mixed</code><br>$data The data to validate.</dd>
+					<dt><var>$rules</var></dt>
+					<dd><code>mixed</code><br>$rules The rules to validate the data against.</dd>
+				</dl></div>
 
 
 
@@ -163,31 +170,38 @@ Illuminate\Container\Container
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="configure" id="_configure">
+	<tr data-order="getMessage" id="_getMessage">
 
 		<td class="attributes"><code>
-			 public 
+			 protected 
 			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_configure">#</a>
-		<code><a href="source-class-IT490.Application.html#26-40" title="Go to source code">configure</a>( <span>mixed <var>$mode</var></span>, <span>mixed <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+		<a class="anchor" href="#_getMessage">#</a>
+		<code><a href="source-class-IT490.Validator.html#22-33" title="Go to source code">getMessage</a>( <span>mixed <var>$attribute</var></span>, <span>mixed <var>$rule</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Allows for configuration based off the mode of the application.</p>
+<p>Get the validation message for an attribute and rule.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Allows for configuration based off the mode of the application.</p>
+<p>Get the validation message for an attribute and rule.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attribute</var></dt>
+					<dd><code>mixed</code><br>$attribute The attribute/key from the data array</dd>
+					<dt><var>$rule</var></dt>
+					<dd><code>mixed</code><br>$rule The rule that you need to get an attribute for.</dd>
+				</dl></div>
 
 
 
@@ -196,33 +210,38 @@ Illuminate\Container\Container
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="boot" id="_boot">
+	<tr data-order="getSizeMessage" id="_getSizeMessage">
 
 		<td class="attributes"><code>
-			 public 
+			 protected 
 			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_boot">#</a>
-		<code><a href="source-class-IT490.Application.html#42-52" title="Go to source code">boot</a>( )</code>
+		<a class="anchor" href="#_getSizeMessage">#</a>
+		<code><a href="source-class-IT490.Validator.html#35-43" title="Go to source code">getSizeMessage</a>( <span>mixed <var>$attribute</var></span>, <span>mixed <var>$rule</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Start up the application.</p>
+<p>Get the proper error message for an attribute and size rule.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Start up the application.</p>
-
-<p>Does all the loading and setup for the application to be run.</p>
+<p>Get the proper error message for an attribute and size rule.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attribute</var></dt>
+					<dd><code>mixed</code><br>$attribute The attribute/key from the data array</dd>
+					<dt><var>$rule</var></dt>
+					<dd><code>mixed</code><br>$rule The rule that you need to get an attribute for.</dd>
+				</dl></div>
 
 
 
@@ -231,97 +250,36 @@ Illuminate\Container\Container
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="run" id="_run">
+	<tr data-order="getAttribute" id="_getAttribute">
 
 		<td class="attributes"><code>
-			 public 
+			 protected 
 			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_run">#</a>
-		<code><a href="source-class-IT490.Application.html#54-59" title="Go to source code">run</a>( )</code>
+		<a class="anchor" href="#_getAttribute">#</a>
+		<code><a href="source-class-IT490.Validator.html#45-52" title="Go to source code">getAttribute</a>( <span>mixed <var>$attribute</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Actually runs the application.</p>
+<p>Get the displayable name of the attribute.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Actually runs the application.</p>
+<p>Get the displayable name of the attribute.</p>
 
 
 
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="router" id="_router">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_router">#</a>
-		<code><a href="source-class-IT490.Application.html#61-66" title="Go to source code">router</a>( )</code>
-
-		<div class="description short">
-			
-<p>Returns the instance of the Router for this application.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Returns the instance of the Router for this application.</p>
-
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="slim" id="_slim">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_slim">#</a>
-		<code><a href="source-class-IT490.Application.html#68-73" title="Go to source code">slim</a>( )</code>
-
-		<div class="description short">
-			
-<p>Returns the instance of Slim for this application.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Returns the instance of Slim for this application.</p>
-
-
-
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$attribute</var></dt>
+					<dd><code>mixed</code><br>$attribute The attribute/key from the data array to make human readable.</dd>
+				</dl></div>
 
 
 
@@ -345,31 +303,27 @@ Illuminate\Container\Container
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="root" id="$root">
+	<tr data-order="customMessages" id="$customMessages">
 		<td class="attributes"><code>
-			public  
-			mixed
+			protected  
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-IT490.Application.html#11-14" title="Go to source code"><var>$root</var></a>
+				<a href="source-class-IT490.Validator.html#7-9" title="Go to source code"><var>$customMessages</var></a>
 		</td>
-		<td class="value"><code></code></td>
+		<td class="value"><code><span class="php-keyword1">array</span>(
+		<span class="php-quote">'required'</span> =&gt; <span class="php-quote">'%s is required.'</span>,
+	)</code></td>
 		<td class="description"><div>
-			<a href="#$root" class="anchor">#</a>
+			<a href="#$customMessages" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>The root directory of the application. Usually set in your index.php
-file.</p>
-
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>The root directory of the application. Usually set in your index.php
-file.</p>
-
 
 			</div>
 		</div></td>
