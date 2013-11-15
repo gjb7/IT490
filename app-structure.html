@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>It490 by grantjbutler</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>It490</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/grantjbutler/IT490">View the Project on GitHub <small>grantjbutler/IT490</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/grantjbutler/IT490/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/grantjbutler/IT490/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/grantjbutler/IT490">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="app-structure" class="anchor" href="#app-structure"><span class="octicon octicon-link"></span></a>App Structure</h1>
+
+<h2>
+<a name="filesystem-layout" class="anchor" href="#filesystem-layout"><span class="octicon octicon-link"></span></a>Filesystem Layout</h2>
+
+<ul>
+<li>app/
+	<ul>
+		<li>config.php</li>
+		<li>controller/</li>
+		<li>database.php</li>
+		<li>migration/</li>
+		<li>model/</li>
+		<li>routes.php</li>
+		<li>views/</li>
+	</ul>
+</li>
+<li>inc/
+	<ul>
+		<li>IT490/</li>
+	</ul>
+</li>
+<li>index.php</li>
+<li>common.php</li>
+<li>vendor/</li>
+</ul>
+
+<h2>
+<a name="files" class="anchor" href="#files"><span class="octicon octicon-link"></span></a>Files</h2>
+
+<h3>
+<a name="app" class="anchor" href="#app"><span class="octicon octicon-link"></span></a>app/</h3>
+
+<p><code>app/</code> holds all the files specific to your application. That is, any custom code that you might have to write to get your app working. This includes specifying the routes for your application, the models, controllers, and views your app uses, and the database migrations for your app.</p>
+
+<h4>
+<a name="config.php" class="anchor" href="#config"><span class="octicon octicon-link"></span></a>config.php</h4>
+
+<p><code>config.php</code> holds basic information to configure your application. Configuration options include setting the app in debug mode or setting up the view system.</p>
+
+<h4>
+<a name="controller" class="anchor" href="#controller"><span class="octicon octicon-link"></span></a>controller/</h4>
+
+<p><code>controller/</code> is where you put all the classes that are executed as a the result of URL being visited. They will process any input, and send back some kind of output to the browser.
+
+<h4>
+<a name="database" class="anchor" href="#database"><span class="octicon ociton-link"></span></a>database.php</h4>
+
+<p><code>database.php</code> is the file where you put your database info. This project has only been tested with MySQL.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/grantjbutler">grantjbutler</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
