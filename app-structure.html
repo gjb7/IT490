@@ -78,6 +78,26 @@
 <a name="database" class="anchor" href="#database"><span class="octicon ociton-link"></span></a>database.php</h4>
 
 <p><code>database.php</code> is the file where you put your database info. This project has only been tested with MySQL.</p>
+
+<h4>
+<a name="migration" class="anchor" href="#migration"><span class="octicon ociton-link"></span></a>migration/</h4>
+
+<p><code>migration/</code> is where all database migrations (schema changes for the database) are stored. For information on creating and using migrations, see <a href="migrations.html">the migration docs</a>.</p>
+
+<h4>
+<a name="model" class="anchor" href="#model"><span class="octicon ociton-link"></span></a>model/</h4>
+
+<p><code>model/</code> holds all the model classes for the app. This project uses <a href="http://four.laravel.com/docs/eloquent">Eloquent</a> for its model and database implementations, with a few changes. You should inherit from <code>IT490\Model</code> instead of <code>Eloquent</code>, as we implement some custom validation techniques.</p>
+
+<h4>
+<a name="routes" class="anchor" href="#routes"><span class="octicon ociton-link"></span></a>routes.php</h4>
+
+<p><code>routes.php</code> specifies the routes for your application. See the docs for the <a href="api-docs/class-IT490.Router.html"><code>Router</code> class</a> for details on methods you can use to specify routes.</p>
+
+<h4>
+<a name="views" class="anchor" href="#views"><span class="octicon ociton-link"></span></a>views/</h4>
+
+<p><code>views/</code> holds all the view templates used by the system. Templates are written in <a href="http://twig.sensiolabs.org/">Twig syntax</a>. For information on creating templates, see <a href="templates.html">the templates docs</a>.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/grantjbutler">grantjbutler</a></p>
