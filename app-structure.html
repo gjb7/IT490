@@ -46,13 +46,14 @@
 		<li>views/</li>
 	</ul>
 </li>
+<li>common.php</li>
 <li>inc/
 	<ul>
 		<li>IT490/</li>
 	</ul>
 </li>
 <li>index.php</li>
-<li>common.php</li>
+<li>migrate.php</li>
 <li>vendor/</li>
 </ul>
 
@@ -98,6 +99,31 @@
 <a name="views" class="anchor" href="#views"><span class="octicon ociton-link"></span></a>views/</h4>
 
 <p><code>views/</code> holds all the view templates used by the system. Templates are written in <a href="http://twig.sensiolabs.org/">Twig syntax</a>. For information on creating templates, see <a href="templates.html">the templates docs</a>.</p>
+
+<h3>
+<a name="common" class="anchor" href="#common"><span class="octicon octicon-link"></span></a>common.php</h3>
+
+<p><code>common.php</code> handles any setup that is common to <code>index.php</code> and <code>migrate.php</code>. This currently is just setting up the database connection.</p>
+
+<h3>
+<a name="inc" class="anchor" href="#inc"><span class="octicon octicon-link"></span></a>inc/</h3>
+
+<p><code>inc/</code> holds implements the system that the web application is built on top of. All these files are put into the <code>IT490/</code> directory to keep in line of how namespacing works. Included classes include <a href="api-docs/class-IT490.Router.html">the <code>Router</code> class</a>, which handles routing URLS and <a href="api-docs/class-IT490.RendererManager.html">the <code>RendererManager</code> class</a>, which manages how output is generates.</p>
+
+<h3>
+<a name="index" class="anchor" href="#index"><span class="octicon octicon-link"></span></a>index.php</h3>
+
+<p><code>index.php</code> handles creating a new <a href="api-docs/class-IT490.Application.html"><code>Application</code> instance</a>, and starts the process of parsing a request, sending it to <a href="api-docs/class-IT490.Router.html">the <code>Router</code></a>, and sending the response back to the browser.</p>
+
+<h3>
+<a name="migrate" class="anchor" href="#migrate"><span class="octicon octicon-link"></span></a>migrate.php</h3>
+
+<p><code>migrate.php</code> is a command line tool to create database migrations as well as perform the any migrations that haven't been applied to the database yet. See <a href="migrations.html">the migration docs</a> for more details.</p>
+
+<h3>
+<a name="vendor" class="anchor" href="#vendor"><span class="octicon octicon-link"></span></a>vendor/</h3>
+
+<p><code>vendor/</code> holds any third-party libraries and frameworks that are used by the project. This directory is automatically created after running <code>composer install</code>. For adding additional third-party code, look at the docs for <a href="http://getcomposer.org">Composer</a>.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/grantjbutler">grantjbutler</a></p>
