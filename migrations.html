@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>It490 by grantjbutler</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>It490</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/grantjbutler/IT490">View the Project on GitHub <small>grantjbutler/IT490</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/grantjbutler/IT490/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/grantjbutler/IT490/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/grantjbutler/IT490">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="migrations" class="anchor" href="#migrations"><span class="octicon octicon-link"></span></a>Migrations</h1>
+
+<p>Database migrations provide a way to make changes to the database without having to write the SQL yourself. This is helpful for when you need to support multiple database systems, as well as providing a reliable and consistent way of creating and setting up your database. This document will outline how you can create new migrations as well as execute any new migrations.</p>
+
+<p><strong>NOTE:</strong> In certain places, you will be asked to run a command with PHP. If you're using NJIT's AFS, the default version of PHP installed does not support MySQL connections. You must instead use <code>/usr/local/bin/php</code>.</p>
+
+<h2>
+<a name="creating-a-migration" class="anchor" href="#creating-a-migration"><span class="octicon octicon-link"></span></a>Creating a Migration</h2>
+
+<p>Creating a new database migration is fairly simple. Open a new command line window, and navigate to the root of the project. Execute the following command: <code>php -f migrate.php new &lt;migration name&gt;</code>. This will create a new migration in <code>app/migration/</code> with the name you provided.</p>
+
+<p>To actually write the migration code, open up the file that you just created. At the top of the file, after the first <code>use</code> statement, add the following line:</p>
+
+<pre><code>use Illuminate\Database\Capsule\Manager as Capsule;</code></pre>
+
+<p>From there you can follow Laravel's <a href="http://four.laravel.com/docs/schema">Schema documentation</a> for creating with one modification: you must use <code>Capsule::schema()</code> in place of <code>Schema</code> in Laravel's documentation. Other than that, follow Laravel's guide.</p>
+
+<h3>
+<a name="running-migrations" class="anchor" href="#creating-a-migration"><span class="octicon octicon-link"></span></a>Running Migrations</h3>
+
+<p>Once you've created your migration, you need to then tell your database about the changes. All you need to do is go back into your project root directory in a command line window, and execute the following command: <code>php -f migrate.php</code>. This will find any new migrations that need to be run against the database, and runs them. After this command executes, you're free to start using the new database changes.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/grantjbutler">grantjbutler</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
