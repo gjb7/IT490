@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>It490 by grantjbutler</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>It490</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/grantjbutler/IT490">View the Project on GitHub <small>grantjbutler/IT490</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/grantjbutler/IT490/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/grantjbutler/IT490/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/grantjbutler/IT490">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="templates" class="anchor" href="#templates"><span class="octicon octicon-link"></span></a>Templates</h1>
+
+<p>This document describes the templating system used, as well as how to create new new templates.</p>
+
+<h2>
+<a name="creating-a-template" class="anchor" href="#creating-a-template"><span class="octicon octicon-link"></span></a>Creating a Template</h2>
+
+<p>Under the hood, <a href="http://twig.sensiolabs.org/">Twig</a> is used for our templating engine. All templates are written in Twig's syntax. You should read up on Twig's syntax before continuing with this document.</p>
+
+<p>Templates are usually used in conjunction with a controller. When a method is called on a controller because of a user navigating to a specific URL. The template should have the same name as the method on the controller class, and should be stored in <code>app/views/&lt;controller name&gt;</code>, where the controller name is the controller class, without <code>Controller</code>, and then made lowercase.</p>
+
+<p>When creating a new template, you should extend the <code>_layout.twig</code> template, and override the <code>title</code> and <code>content</code> blocks. For information about those techniques, read the documentation on <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">template inheritance</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/grantjbutler">grantjbutler</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
